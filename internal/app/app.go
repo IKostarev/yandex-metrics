@@ -18,7 +18,7 @@ func Run() {
 		})
 	})
 
-	if err := http.ListenAndServe(config.HTTP_ADDRESS, route); err != nil {
-		log.Fatalf("Error starting server on port %s...\n", config.HTTP_ADDRESS)
+	if err := http.ListenAndServe(config.ADDRESS, route); err != nil {
+		log.Fatalf("Error starting server on port %s...\n", config.ADDRESS)
 	}
 }

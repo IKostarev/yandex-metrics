@@ -1,3 +1,3 @@
 package config
 
-const HTTP_ADDRESS = ":8080"
+const ADDRESS = ":8080"
