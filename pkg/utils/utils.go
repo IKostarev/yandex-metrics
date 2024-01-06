@@ -10,6 +10,11 @@ func MetricNameNotFound(w http.ResponseWriter, metricName string) {
 	w.WriteHeader(NotFound)
 }
 
+func MetricBad(w http.ResponseWriter, metricName string) {
+	fmt.Printf("[MetricBad] metric %s is bad\n", metricName)
+	w.WriteHeader(BadRequest)
+}
+
 func PositiveAnswerToUser(w http.ResponseWriter, statusCode int) {
 	w.Header().Set("Content-Type", "text/plain")
 	w.WriteHeader(statusCode)

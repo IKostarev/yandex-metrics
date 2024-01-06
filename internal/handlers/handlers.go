@@ -23,6 +23,7 @@ func GaugeHandler(w http.ResponseWriter, r *http.Request) {
 	valueToFloat, err := strconv.ParseFloat(metricsValue, 64)
 	if err != nil {
 		_ = fmt.Errorf("[GaugeHandler] error parse int in url params")
+		utils.MetricBad(w, metricsName)
 		return
 	}
 
@@ -43,6 +44,7 @@ func CounterHandler(w http.ResponseWriter, r *http.Request) {
 	valueToInt, err := strconv.ParseInt(metricsValue, 0, 64)
 	if err != nil {
 		_ = fmt.Errorf("[CounterHandler] error parse int in url params")
+		utils.MetricBad(w, metricsName)
 		return
 	}
 
